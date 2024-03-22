@@ -1,0 +1,28 @@
+version: '3'
+services:
+  service-one:
+    image: 'httpd'
+    ports:
+      - "80:80"
+    volumes:
+      - "/mnt/webpages:/usr/local/apache2/htdocs"
+  service-two:
+    image: 'tomcat'
+    ports:
+      - "8080:8080"
+    volumes:
+      - "/mnt/wars:/usr/local/tomcat/webapps"
+  service-three:
+    image: 'tomcat'
+    ports:
+      - '8090:8080'
+    volumes:
+      - "/mnt/wars:/usr/local/tomcat/webapps"
+
+  service-four:
+    image: 'tomcat'
+    ports:
+      - "9000:8080"
+    volumes:
+      - "/mnt/wars:/usr/local/tomcat/webapps"
+~
